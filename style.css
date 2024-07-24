@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins: ital, wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1, 300;1,400;1,500;1,600;1,700;1,800;1,900&display-swap');
+
+.container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: #2a1b3d;
+  color: #03e9f4;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .Loading {
+  user-select: none;
+  display: flex;
+  gap: 10px;
+}
+
+.container .Loading span {
+  font-size: 3em;
+  font-weight: 700;
+  animation: changeColor 1s linear infinite, /* + thêm tính vô hạn */
+  characterAnimate 0.5s ease-in-out forwards; /* thêm hoạt ảnh */
+  animation-delay: calc(0.1s * var(--i)) /* độ trễ hoạt hình */
+}
+
+@keyframes changeColor {
+  0%, 100% {
+    color: #03e9f4;
+    text-shadow: 0 0 15px #03e9f4, 0 0 25px #03e9f4;
+    transition: all 0.5s ease-in-out; /* thêm hiệu ứng chuyển tiếp */
+  }
+  25% {
+    color: #00ffff;
+  }
+  50% {
+    color: #7fffd4;
+  }
+  75% {
+    color: #007fff;
+  }
+}
+
+@keyframes characterAnimate {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* thêm hiệu ứng chuyển động */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
